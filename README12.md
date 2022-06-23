@@ -1,4 +1,5 @@
-# Jumia Interview
+
+# AngularInterview
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
@@ -6,38 +7,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Collins Kipkirui Bett
 
 # Description
-This is an application to fetch user information from randomuser.me API. The fetched information is desplayed using Material tables. 
+//content here
+
 
 # Features
-- Infinite Virtual Scrolling
-- Angular Material Styling
-- Angular bootstrap Styling
-- MatTableExport to CSV file
-- RxJs library using Observables to fetch API data
-- Ngx-Loading
-- randomuser.me
+//add features here
 
 # Behaviour Driven Development
-- Its a simple application that displays data on the first page, on scroll it loads more data using the infinite scrolling idea.
-
+//usage and procedure by users
 # Set up and Installations
 //info goes here
 //running application
 // Testing procedure
 
 # Technology Used
-- angular v13.3.3
-- rxjs v7.5.0
-- sweetalert2 v11.4.18,
-- zone.js v0.11.4
-- typescript v4.6.2
-- jasmine-core v4.0.0,
-- karma v6.3.0,
-- npm v8.10.0
-- node v16.14.2
-- angular/material v13.3.9
-- @ng-bootstrap/ng-bootstrap v12.1.2,
-- mat-table-exporter v10.2.4
+//tech info
 
 # Future Implimentation
 //depends on achievement
@@ -47,7 +31,6 @@ This is an application to fetch user information from randomuser.me API. The fet
 
 # Copyright and License
 The project if under MIT License . Copyright 
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

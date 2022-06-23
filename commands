@@ -1,0 +1,2 @@
+docker build -t francium-ui-image .
+docker run --name francium-ui-container -d -p 8080:80 francium-ui-image
