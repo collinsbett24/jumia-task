@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   title = 'Users App List';
   Data: Array<UserInterface> = [];
   dataSource = new MatTableDataSource<UserInterface>(this.Data);
-  @ViewChild(MatSort) sort?: MatSort;
+  @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(CdkVirtualScrollViewport) scroller!: CdkVirtualScrollViewport;
 
   displayedColumns: string[] = ['name', 'gender', 'location', 'email', 'current_age', 'registration', 'phone', 'picture'];
@@ -25,6 +25,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     //calling getData function
     this.getData();
+
+    //assigning data for call
+    this.dataSource.sort = this.sort;
   }
 
   //function including ngZone to run infinite Virtual scrolling based on scroll height

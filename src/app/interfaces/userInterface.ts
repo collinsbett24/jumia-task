@@ -5,10 +5,15 @@ export interface UserInterface {
     email: string,
     login: Array<any>,
     dob: Array<any>,
-    registered: Array<any>,
+    registered: Array<registered>,
     phone: string,
     cell: string,
     id: Array<string>
     picture: Array<string>,
     nat: string
+}
+
+export interface registered {
+    date: Date,
+    age: number
 }

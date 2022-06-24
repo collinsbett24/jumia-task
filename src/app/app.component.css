@@ -6,7 +6,18 @@
     background-color: #70c4e6;
 }
 
+td.table {
+    width: 20px;
+    padding-right: 8px;
+}
+
+th.table,
+td.table {
+    padding-left: 8px;
+}
+
 .csv-button {
+
     display: flex;
     justify-content: end;
     padding: 1rem;
@@ -17,7 +28,7 @@
 }
 
 .csv-button button {
-    background-color: #70c4e6;
+    background-color: orange;
 }
 
 .vitualization-table {
