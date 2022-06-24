@@ -23,11 +23,13 @@ import { FormsModule } from '@angular/forms';
 import { ColumnsComponent } from './components/columns/columns.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxLoadingModule } from 'ngx-loading';
+import { GenderOptionsComponent } from './components/gender-options/gender-options.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColumnsComponent
+    ColumnsComponent,
+    GenderOptionsComponent
   ],
   imports: [
     BrowserModule,

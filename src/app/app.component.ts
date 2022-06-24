@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   title = 'Users App List';
   Data: Array<UserInterface> = [];
   dataSource = new MatTableDataSource<UserInterface>(this.Data);
+  FilterValues: Array<string> = [];
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(CdkVirtualScrollViewport) scroller!: CdkVirtualScrollViewport;
 
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit {
 
     //assigning data for call
     this.dataSource.sort = this.sort;
+
   }
 
   //function including ngZone to run infinite Virtual scrolling based on scroll height
@@ -66,8 +68,8 @@ export class AppComponent implements OnInit {
   }
 
   //function to filture data on Material data table on KeyUp
-  applyFilter(event: any) {
-    const filterValue = (event.target as HTMLInputElement).value;
+  applyFilter(event: string) {
+    const filterValue = event;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

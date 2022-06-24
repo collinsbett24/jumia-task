@@ -22,10 +22,13 @@
   <!-- div with filter and columns and button -->
   <div class="nav_elem pt-3">
     <div class="col3 me-5">
-      <mat-form-field appearance="outline">
+      <app-gender-options (filterGender)="applyFilter($event)">
+
+      </app-gender-options>
+      <!-- <mat-form-field appearance="outline">
         <mat-label>Filter By Name</mat-label>
         <input id="filter-input" matInput (keyup)="applyFilter($event)" placeholder="Filter Value" #input>
-      </mat-form-field>
+      </mat-form-field> -->
     </div>
     <div class="col6">
       <app-columns (displayColumn)="updateDisplay($event)"></app-columns>
@@ -109,7 +112,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       <tr *matNoDataRow>
         <td colspan="5" style="color: brown;">
-          <h2>No User data in the list matching <b>{{input.value}}</b></h2>
+          <h2>No User data in the list matching that Gender</h2>
         </td>
       </tr>
     </table>

@@ -1,9 +1,11 @@
 import { HttpClient, HttpErrorResponse, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, finalize, Observable, retry, throwError } from 'rxjs';
+import { catchError, finalize, Observable, retry, throwError, timeout } from 'rxjs';
 import Swal from 'sweetalert2';;
 import { LoaderService } from './loader.service';
 import { UserInterface } from '../interfaces/userInterface';
+import { timeInterval, TimeInterval } from 'rxjs/internal/operators/timeInterval';
+import { timers } from 'cypress/types/jquery';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +35,7 @@ export class ApiService {
         catchError((error: HttpErrorResponse) => {
           this.loaderservice.isLoading.next(false);
           //error handling logic
+
           Swal.fire('Error', 'HTTP Error: Failed!! Try again later', 'error');
 
           // alert(`HTTP Error: ${req.url}`);
