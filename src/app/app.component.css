@@ -12,6 +12,10 @@
     padding: 1rem;
 }
 
+.user_picture {
+    border-radius: 50%;
+}
+
 .csv-button button {
     background-color: #70c4e6;
 }
