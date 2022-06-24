@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
 
   //function including ngZone to run infinite Virtual scrolling based on scroll height
   ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
     this.scroller.elementScrolled().pipe(
       map(() => this.scroller.measureScrollOffset("bottom")),
       pairwise(),

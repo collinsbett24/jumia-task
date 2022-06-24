@@ -29,6 +29,7 @@ td.table {
 
 .csv-button button {
     background-color: orange;
+    margin-bottom: 1rem;
 }
 
 .vitualization-table {
