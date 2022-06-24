@@ -107,6 +107,11 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr *matNoDataRow>
+        <td colspan="5" style="color: brown;">
+          <h2>No User data in the list matching <b>{{input.value}}</b></h2>
+        </td>
+      </tr>
     </table>
   </cdk-virtual-scroll-viewport>
   <!-- End of material table -->
