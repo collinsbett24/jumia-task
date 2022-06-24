@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { LoaderService } from './service/loader.service';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-import { filter, map, pairwise, throttleTime, timer } from 'rxjs';
+import { filter, map, pairwise, throttleTime } from 'rxjs';
 import { UserInterface } from './interfaces/userInterface';
 
 @Component({
@@ -12,12 +12,9 @@ import { UserInterface } from './interfaces/userInterface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Users App List';
-
   Data: Array<UserInterface> = [];
-  resultsLength = 0;
-
   dataSource = new MatTableDataSource<UserInterface>(this.Data);
   @ViewChild(MatSort) sort?: MatSort;
   @ViewChild(CdkVirtualScrollViewport) scroller!: CdkVirtualScrollViewport;

@@ -1,5 +1,5 @@
 <mat-toolbar class="toolbar">
-  <span>Welcome | {{title}}</span>
+  <span class="span">Welcome | {{title}}</span>
 </mat-toolbar>
 <div class="container pb-5">
   <!-- <div class="example-loading-shade" *ngIf="loader.isLoading | async">
@@ -25,7 +25,7 @@
       <app-columns (displayColumn)="updateDisplay($event)"></app-columns>
     </div>
     <div class="col-3 csv-button">
-      <button class="btn btn-sm" mat-button (click)="exporter.exportTable('csv')"> Export To CSV</button>
+      <button id="csv-button" class="btn btn-sm" mat-button (click)="exporter.exportTable('csv')">Export To CSV</button>
     </div>
   </div>
   <cdk-virtual-scroll-viewport #scroller class="vitualization-table" itemSize="72">

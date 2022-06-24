@@ -8,9 +8,9 @@ describe('ColumnsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ColumnsComponent ]
+      declarations: [ColumnsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +22,9 @@ describe('ColumnsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain Column names', () => {
+    expect(component.task.length).toBeGreaterThan(0);
+    console.log('Columns Are available');
+  })
 });

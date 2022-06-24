@@ -1,5 +1,9 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { MatTableExporterModule } from 'mat-table-exporter';
 import { AppComponent } from './app.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -7,6 +11,11 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        HttpClientTestingModule,
+        ScrollingModule,
+        MatTableExporterModule,
+      ]
     }).compileComponents();
   });
 
@@ -22,10 +31,18 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Users App List');
   });
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement as HTMLElement;
-  //   expect(compiled.querySelector('.content span')?.textContent).toContain('Users App List app is running!');
-  // });
+  it('should contain the following values', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.toolbar span')?.textContent).toContain('Welcome | Users App List');
+    expect(compiled.querySelector('#csv-button')?.textContent).toContain('Export To CSV');
+  });
+
+  it('should contain a table', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('.table')))?.toBeTruthy();
+
+  });
 });

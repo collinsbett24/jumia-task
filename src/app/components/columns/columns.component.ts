@@ -21,5 +21,4 @@ export class ColumnsComponent implements OnInit {
   removeColumn(value: any) {
     this.displayColumn.emit(value);
   }
-  checked = true;
 }
