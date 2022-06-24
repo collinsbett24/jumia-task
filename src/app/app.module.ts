@@ -18,9 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 
-
 import { MatTableExporterModule } from 'mat-table-exporter';
-// import { ListUsersComponent } from './components/list-users/list-users.component';
 import { FormsModule } from '@angular/forms';
 import { ColumnsComponent } from './components/columns/columns.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,8 +27,7 @@ import { NgxLoadingModule } from 'ngx-loading';
 @NgModule({
   declarations: [
     AppComponent,
-    ColumnsComponent,
-    // ListUsersComponent
+    ColumnsComponent
   ],
   imports: [
     BrowserModule,

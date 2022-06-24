@@ -21,9 +21,42 @@ This is an application to fetch user information from randomuser.me API. The fet
 - Its a simple application that displays data on the first page, on scroll it loads more data using the infinite scrolling idea.
 
 # Set up and Installations
-//info goes here
-//running application
-// Testing procedure
+Follow the following installation to setup the application
+1. On local Machine
+    - run git clone "https://github.com/collinsbett24/jumia-task.git"
+    - inside your new applications directory 
+        ->run npm install npm
+    ## run on localhost
+    - run ng serve --open
+
+
+2. On EC2 container
+    - it clone on ubuntu serve or linux server
+        run git clone "https://github.com/collinsbett24/jumia-task.git"
+    - move to you new applications directory and build a docker image using the following command
+        docker build -t jumia-task-image .
+    ## run project on container
+    - docker run --name jumia-task-container -d -p 8080:80 francium-ui-image
+
+3. Set up on Heroku
+
+
+# Testing
+The project can go throught the following tests
+
+## Unit Testing
+ Unit testing can be done on the project using the jasmine default setting. To perform unit testing on this project, run the following command:-
+        - ng test 
+
+ ## E2E Testing
+ End to End Testing was done and can be done on this project.
+    Cypress has been configured in place of protractor to run E2E test file run the following command:
+
+        - npm run  cypress:run
+        OR
+        - ng e2e
+
+
 
 # Technology Used
 - angular v13.3.3
@@ -38,12 +71,13 @@ This is an application to fetch user information from randomuser.me API. The fet
 - angular/material v13.3.9
 - @ng-bootstrap/ng-bootstrap v12.1.2,
 - mat-table-exporter v10.2.4
+- cypress/schematics
 
 # Future Implimentation
-//depends on achievement
+Future implimentation can be achieved by improving filtering to both age and location.
 
 # Known Bugs
-//api bugs
+//
 
 # Copyright and License
 The project if under MIT License . Copyright 

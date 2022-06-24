@@ -23,11 +23,11 @@ export class AppComponent implements OnInit {
 
   constructor(private ngZone: NgZone, private api: ApiService, public loader: LoaderService) { }
   ngOnInit(): void {
-
     //calling getData function
     this.getData();
-    // console.log(this.Data);
   }
+
+  //function including ngZone to run infinite Virtual scrolling based on scroll height
   ngAfterViewInit() {
     this.scroller.elementScrolled().pipe(
       map(() => this.scroller.measureScrollOffset("bottom")),
@@ -40,7 +40,8 @@ export class AppComponent implements OnInit {
       });
     });
   }
-  //subscribe to the service class to get data
+
+  //function to subscribe to the Api service class to get data
   getData() {
     let resp = this.api.getUserInformation();
     resp.subscribe((response: any) => {
@@ -48,7 +49,8 @@ export class AppComponent implements OnInit {
       this.dataSource.data = response.results as UserInterface[];
     });
   }
-  //add columns to display
+
+  //function to Remove and Add Columns to display
   updateDisplay(column_name: string) {
     console.log(column_name)
     let index = this.displayedColumns.findIndex(d => d == column_name);
@@ -59,6 +61,7 @@ export class AppComponent implements OnInit {
       this.displayedColumns.push(column_name);
   }
 
+  //function to filture data on Material data table on KeyUp
   applyFilter(event: any) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

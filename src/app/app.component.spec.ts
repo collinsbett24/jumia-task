@@ -43,6 +43,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('.table')))?.toBeTruthy();
-
+    console.log('Table with className "table" is present');
   });
 });

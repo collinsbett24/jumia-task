@@ -88,9 +88,31 @@ svg#clouds {
     align-items: ltr;
 }
 
+.col3 {
+    width: 25%;
+}
+
+.col6 {
+    width: 50%;
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
+
+    .nav_elem {
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col3 {
+        width: 100%;
+    }
+
+    .col6 {
+        width: 100%;
+    }
 
     .card-container>*:not(.circle-link),
     .terminal {
