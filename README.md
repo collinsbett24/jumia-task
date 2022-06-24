@@ -31,7 +31,7 @@ Follow the following installation to setup the application
 
 
 2. On EC2 container
-    - it clone on ubuntu serve or linux server
+    - git clone on ubuntu serve or linux server
         run git clone "https://github.com/collinsbett24/jumia-task.git"
     - move to you new applications directory and build a docker image using the following command
         docker build -t jumia-task-image .
@@ -39,6 +39,7 @@ Follow the following installation to setup the application
     - docker run --name jumia-task-container -d -p 8080:80 francium-ui-image
 
 3. Set up on Heroku
+
 
 
 # Testing
@@ -74,7 +75,7 @@ The project can go throught the following tests
 - cypress/schematics
 
 # Future Implimentation
-Future implimentation can be achieved by improving filtering to both age and location.
+Future implimentation can be achieved through improving filtering by location, and sorting using seniority column.
 
 # Known Bugs
 //

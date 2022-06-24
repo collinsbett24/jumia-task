@@ -5,6 +5,6 @@ describe('My Home Page Test', () => {
     cy.get('table');
     cy.get('button');
     cy.get('app-columns');
-    cy.get('input').type('name');
+    cy.get('app-gender-options');
   });
 });
