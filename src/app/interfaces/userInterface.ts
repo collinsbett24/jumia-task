@@ -1,19 +1,18 @@
 export interface UserInterface {
     gender: string,
-    name: Array<any>,
-    location: Array<any>,
+    name: [
+        title: string,
+        first: string,
+        last: string
+    ],
+    location: [
+        country: string
+    ],
     email: string,
-    login: Array<any>,
     dob: Array<any>,
-    registered: Array<registered>,
+    registered: [
+        age: number
+    ],
     phone: string,
-    cell: string,
-    id: Array<string>
     picture: Array<string>,
-    nat: string
-}
-
-export interface registered {
-    date: Date,
-    age: number
 }

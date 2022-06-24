@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   title = 'Users App List';
   Data: Array<UserInterface> = [];
   dataSource = new MatTableDataSource<UserInterface>(this.Data);
-  FilterValues: Array<string> = [];
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(CdkVirtualScrollViewport) scroller!: CdkVirtualScrollViewport;
 
@@ -29,6 +28,11 @@ export class AppComponent implements OnInit {
 
     //assigning data for call
     this.dataSource.sort = this.sort;
+
+    //filterPredicate to filter gender using start characters
+    this.dataSource.filterPredicate = function (data: UserInterface, filter: string): boolean {
+      return data.gender.toLowerCase().startsWith(filter);
+    };
 
   }
 

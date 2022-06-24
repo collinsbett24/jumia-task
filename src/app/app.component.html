@@ -65,7 +65,7 @@
         <th mat-header-cell *matHeaderCellDef>
           <h4><b>Locaton</b></h4>
         </th>
-        <td mat-cell *matCellDef="let row">{{row.location.city}} {{row.location.state}}</td>
+        <td mat-cell *matCellDef="let row">{{row.location.country}} {{row.location.state}}</td>
       </ng-container>
 
       <!-- Email Column -->
@@ -87,9 +87,9 @@
       <!-- Registration Column -->
       <ng-container matColumnDef="registration">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <h4><b>Registration</b></h4>
+          <h4><b>Seniority</b></h4>
         </th>
-        <td mat-cell *matCellDef="let row">{{row.registered.age}}</td>
+        <td mat-cell *matCellDef="let row">{{row.registered.age | number}} Yrs</td>
       </ng-container>
 
       <!-- Phone Column -->
@@ -127,7 +127,6 @@
       transform="translate(142.69 -634.312)" fill="#eee" />
   </svg>
   <!-- End of clouds background templates -->
-
 </div>
 <footer class="footer">
   <div class="footer-copyright text-center py-3">© 2022 Copyright:
