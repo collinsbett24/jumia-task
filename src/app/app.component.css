@@ -103,6 +103,7 @@ svg#clouds {
 .header {
     position: sticky;
     top: 0;
+    color: orange;
 }
 
 .nav_elem {
