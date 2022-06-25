@@ -14,5 +14,5 @@ export interface UserInterface {
         age: number
     ],
     phone: string,
-    picture: Array<string>,
+    picture: Array<string>
 }
