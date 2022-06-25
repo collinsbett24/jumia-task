@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
+git clone "https://github.com/collinsbett24/jumia-task.git"
+
 # Author
 Collins Kipkirui Bett
 
@@ -15,20 +17,27 @@ This is an application to fetch user information from randomuser.me API. The fet
 - MatTableExport to CSV file
 - RxJs library using Observables to fetch API data
 - Ngx-Loading
-- randomuser.me
+- Randomuser.me
+- Web service worker/PWA
 
 # Behaviour Driven Development
-- Its a simple application that displays data on the first page, on scroll it loads more data using the infinite scrolling idea.
+It is a simple application that displays data on the first page, on scroll it loads more    data using the infinite scrolling concept.
 
 # Set up and Installations
 Follow the following installation to setup the application
 1. On local Machine
+    - install nodejs && npm
+        -> sudo apt install nodejs
+
+    - install Angular CLI
+        -> npm install -g @angular/cli
+
     - run git clone "https://github.com/collinsbett24/jumia-task.git"
+
     - inside your new applications directory 
-        ->run npm install npm
+        ->run npm install 
     ## run on localhost
     - run ng serve --open
-
 
 2. On EC2 container
     - git clone on ubuntu serve or linux server
@@ -36,14 +45,18 @@ Follow the following installation to setup the application
     - move to you new applications directory and build a docker image using the following command
         docker build -t jumia-task-image .
     ## run project on container
-    - docker run --name jumia-task-container -d -p 8080:80 francium-ui-image
+    - docker run --name jumia-task-container -d -p 8080:80 jumia-task-image
 
 3. Set up on Heroku
+    - The projects contains a server.js file which is used to run the project on heroku.
+    - The following configurations have been setup on package.json:-
+        ->  "start": "node server.js",
+        ->  "heroku-postbuild": "ng build"
 
 
 
 # Testing
-The project can go throught the following tests
+The project can go through the following tests
 
 ## Unit Testing
  Unit testing can be done on the project using the jasmine default setting. To perform unit testing on this project, run the following command:-
@@ -52,12 +65,10 @@ The project can go throught the following tests
  ## E2E Testing
  End to End Testing was done and can be done on this project.
     Cypress has been configured in place of protractor to run E2E test file run the following command:
-
+        - run ng serve then on a separate terminal 
         - npm run  cypress:run
         OR
         - ng e2e
-
-
 
 # Technology Used
 - angular v13.3.3
@@ -73,15 +84,15 @@ The project can go throught the following tests
 - @ng-bootstrap/ng-bootstrap v12.1.2,
 - mat-table-exporter v10.2.4
 - cypress/schematics
+- @angular/pwa v13.3.3
 
-# Future Implimentation
-Future implimentation can be achieved through improving filtering by location, and sorting using seniority column.
-
-# Known Bugs
-//
+# Future Implementation
+Future implementation can be achieved through improving filtering by location, and sorting table data using seniority column.
 
 # Copyright and License
-The project if under MIT License . Copyright 
+Copyright 2022 Collins Bett 
+Licensed under MIT (https://github.com/collinsbett24/jumia-task.git)
+
 
 ## Development server
 
