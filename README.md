@@ -1,4 +1,4 @@
-# Jumia Interview
+# User List Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
@@ -21,7 +21,10 @@ This is an application to fetch user information from randomuser.me API. The fet
 - Web service worker/PWA
 
 # Behaviour Driven Development
-It is a simple application that displays data on the first page, on scroll it loads more    data using the infinite scrolling concept.
+- User can choose to display data based on gender. 
+- He/User can choose columns to view or remove from the data table.
+- Data can be exported to csv by clicking export to csv button.
+- It is a simple application that displays data on the first page, on scroll it loads more    data using the infinite scrolling concept. 
 
 # Set up and Installations
 Follow the following installation to setup the application
@@ -87,7 +90,7 @@ The project can go through the following tests
 - @angular/pwa v13.3.3
 
 # Future Implementation
-Future implementation can be achieved through improving filtering by location, and sorting table data using seniority column.
+Future implementation can be achieved through improving filtering by Nationality.
 
 # Copyright and License
 Copyright 2022 Collins Bett 
