@@ -6,14 +6,8 @@
     background-color: #70c4e6;
 }
 
-td.table {
-    width: 20px;
-    padding-right: 8px;
-}
-
-th.table,
-td.table {
-    padding-left: 8px;
+tr:hover {
+    font-weight: bolder;
 }
 
 .footer {
@@ -41,9 +35,10 @@ td.table {
 .vitualization-table {
     height: calc(100vh - 164px);
     width: 100%;
-    border: 1px solid black;
+    border: none;
     overflow: scroll;
-    padding: 2rem;
+    padding-top: 0rem;
+    box-shadow: 2rem;
 }
 
 .table {
@@ -105,6 +100,13 @@ svg#clouds {
     outline: 1px solid slategrey;
 }
 
+.header {
+    background-color: rgb(239, 243, 245);
+    position: sticky;
+    top: 0;
+    height: 4rem;
+}
+
 .nav_elem {
     display: flex;
     align-items: ltr;
@@ -114,8 +116,12 @@ svg#clouds {
     width: 25%;
 }
 
-.col6 {
+.col5 {
     width: 50%;
+}
+
+.col6 {
+    width: 25%;
 }
 
 
@@ -129,6 +135,12 @@ svg#clouds {
     }
 
     .col3 {
+        width: 100%;
+    }
+
+
+    .col5,
+    .col5 button {
         width: 100%;
     }
 

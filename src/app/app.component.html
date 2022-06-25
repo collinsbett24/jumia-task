@@ -1,6 +1,8 @@
 <!-- toolbar with custom css color -->
 <mat-toolbar class="toolbar sticky-top">
-  <span class="span">Welcome | {{title}}</span>
+  <div class="container">
+    <span class="span">Welcome | {{title}}</span>
+  </div>
 </mat-toolbar>
 <!-- end of toolbar -->
 
@@ -23,17 +25,12 @@
   <div class="nav_elem pt-3">
     <div class="col3 me-5">
       <app-gender-options (filterGender)="applyFilter($event)">
-
       </app-gender-options>
-      <!-- <mat-form-field appearance="outline">
-        <mat-label>Filter By Name</mat-label>
-        <input id="filter-input" matInput (keyup)="applyFilter($event)" placeholder="Filter Value" #input>
-      </mat-form-field> -->
     </div>
     <div class="col6">
       <app-columns (displayColumn)="updateDisplay($event)"></app-columns>
     </div>
-    <div class="col3 csv-button">
+    <div class="col5 csv-button">
       <button id="csv-button" class="btn btn-sm" mat-button (click)="exporter.exportTable('csv')">Export To CSV</button>
     </div>
   </div>
@@ -41,12 +38,12 @@
 
   <!-- material table with virtual scrolling -->
   <cdk-virtual-scroll-viewport #scroller class="vitualization-table" itemSize="72">
-    <table class="table table-striped table-bordered" mat-table matTableExporter [dataSource]="dataSource"
-      #exporter="matTableExporter" matSort matSortStart="desc">
+    <table class="table table-striped" mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter"
+      matSort matSortStart="desc">
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>
+        <th class="header" mat-header-cell *matHeaderCellDef>
           <h4><b>Name</b></h4>
         </th>
         <td mat-cell *matCellDef="let row">{{row.name.title}} {{row.name.first}} {{row.name.last}}</td>
@@ -54,23 +51,23 @@
 
       <!-- Gender Column -->
       <ng-container matColumnDef="gender">
-        <th mat-header-cell *matHeaderCellDef>
-          <h4><b>User_Gender </b></h4>
+        <th class="header" mat-header-cell *matHeaderCellDef>
+          <h4><b>Gender </b></h4>
         </th>
         <td mat-cell *matCellDef="let row">{{row.gender}}</td>
       </ng-container>
 
       <!-- Location Column -->
       <ng-container matColumnDef="location">
-        <th mat-header-cell *matHeaderCellDef>
-          <h4><b>Locaton</b></h4>
+        <th class="header" mat-header-cell *matHeaderCellDef>
+          <h4><b>Location</b></h4>
         </th>
         <td mat-cell *matCellDef="let row">{{row.location.country}} {{row.location.state}}</td>
       </ng-container>
 
       <!-- Email Column -->
       <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef>
+        <th class="header" mat-header-cell *matHeaderCellDef>
           <h4><b>Email</b></h4>
         </th>
         <td mat-cell *matCellDef="let row">{{row.email}}</td>
@@ -78,15 +75,15 @@
 
       <!-- CurrentAge Column -->
       <ng-container matColumnDef="current_age">
-        <th mat-header-cell *matHeaderCellDef>
-          <h4><b>Current_Age</b></h4>
+        <th class="header" mat-header-cell *matHeaderCellDef>
+          <h4><b>Current Age</b></h4>
         </th>
         <td mat-cell *matCellDef="let row">{{row.dob.age}} Yrs </td>
       </ng-container>
 
       <!-- Registration Column -->
       <ng-container matColumnDef="registration">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        <th class="header" mat-header-cell *matHeaderCellDef mat-sort-header>
           <h4><b>Seniority</b></h4>
         </th>
         <td mat-cell *matCellDef="let row">{{row.registered.age | number}} Yrs</td>
@@ -94,21 +91,21 @@
 
       <!-- Phone Column -->
       <ng-container matColumnDef="phone">
-        <th mat-header-cell *matHeaderCellDef>
-          <h4><b>PhoneNumber</b></h4>
+        <th class="header" mat-header-cell *matHeaderCellDef>
+          <h4><b>Phone Number</b></h4>
         </th>
         <td mat-cell *matCellDef="let row">{{row.phone}}</td>
       </ng-container>
 
       <!-- Email Column -->
       <ng-container matColumnDef="picture">
-        <th mat-header-cell *matHeaderCellDef>
+        <th class="header" mat-header-cell *matHeaderCellDef>
           <h4> <b>Picture</b></h4>
         </th>
         <td mat-cell *matCellDef="let row"><img class="user_picture" src="{{row.picture.thumbnail}}"> </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       <tr *matNoDataRow>
         <td colspan="5" style="color: brown;">

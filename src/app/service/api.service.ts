@@ -1,7 +1,8 @@
 import { HttpClient, HttpErrorResponse, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, finalize, Observable, retry, throwError } from 'rxjs';
-import Swal from 'sweetalert2';;
+import Swal from 'sweetalert2';
+import { environment } from '../../environments/environment';
 import { LoaderService } from './loader.service';
 import { UserInterface } from '../interfaces/userInterface';
 
@@ -9,8 +10,6 @@ import { UserInterface } from '../interfaces/userInterface';
   providedIn: 'root'
 })
 export class ApiService {
-
-  private ServerUrl: string = 'https://randomuser.me/api/';
 
   constructor(private http: HttpClient, public loaderservice: LoaderService) { }
 
@@ -48,8 +47,9 @@ export class ApiService {
         })
       );
   }
+
   //subscribe to user information from random.me api server Url
   public getUserInformation(): Observable<UserInterface[]> {
-    return this.http.get<any>(this.ServerUrl + '?results=30');
+    return this.http.get<any>(environment.ServerUrl + '?results=30');
   }
 }
