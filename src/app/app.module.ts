@@ -24,6 +24,8 @@ import { ColumnsComponent } from './components/columns/columns.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxLoadingModule } from 'ngx-loading';
 import { GenderOptionsComponent } from './components/gender-options/gender-options.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,12 @@ import { GenderOptionsComponent } from './components/gender-options/gender-optio
     MatSelectModule,
     NgbModule,
     NgxLoadingModule.forRoot({}),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
 
   providers: [

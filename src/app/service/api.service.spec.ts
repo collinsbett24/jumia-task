@@ -30,7 +30,7 @@ describe('ApiService', () => {
       console.log('result Verified');
     });
 
-    const req = httpMock.expectOne(`${ServerUrl}?results=15`);
+    const req = httpMock.expectOne(`${ServerUrl}?results=30`);
     expect(req.request.method).toBe('GET');
     req.flush({
       results: [

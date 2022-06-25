@@ -52,6 +52,6 @@ export class ApiService {
   }
   //subscribe to user information from random.me api server Url
   public getUserInformation(): Observable<UserInterface[]> {
-    return this.http.get<any>(this.ServerUrl + '?results=15');
+    return this.http.get<any>(this.ServerUrl + '?results=30');
   }
 }
