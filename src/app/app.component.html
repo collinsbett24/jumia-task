@@ -29,9 +29,10 @@
 
       <app-columns id="buttn" class="me-1" (displayColumn)="updateDisplay($event)"></app-columns>
 
-      <button id="buttndisplay" class="btn btn-sm me-1" mat-button (click)="displayAll()">Display All</button>
+      <button mat-button id="buttndisplay" class="btn btn-sm me-1" mat-button (click)="displayAll()">Display
+        All</button>
 
-      <button class="btn btn-sm" mat-button (click)="exporter.exportTable('csv')">Export To CSV</button>
+      <button mat-button class="btn btn-sm" mat-button (click)="exporter.exportTable('csv')">Export To CSV</button>
     </div>
     <div class="col3 me-2">
       <mat-form-field appearance="standard">
