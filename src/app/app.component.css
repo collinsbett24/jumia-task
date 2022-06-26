@@ -2,10 +2,6 @@
     background-color: orange
 }
 
-#filter-form {
-    background-color: #70c4e6;
-}
-
 tr:hover {
     font-weight: bolder;
 }
@@ -17,19 +13,36 @@ tr:hover {
 }
 
 .csv-button {
-
+    width: 75%;
     display: flex;
-    justify-content: end;
-    padding: 1rem;
+    justify-content: start;
+}
+
+#buttn {
+    width: 10rem;
+    padding: 2px;
+}
+
+.csv-button button {
+    margin-top: 0.4rem;
+    width: 10rem;
+    font-size: small;
+    height: 2.2rem;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.nav_elem {
+    display: flex;
+    align-items: ltr;
+}
+
+.col3 {
+    width: 25%;
 }
 
 .user_picture {
     border-radius: 50%;
-}
-
-.csv-button button {
-    background-color: orange;
-    margin-bottom: 1rem;
 }
 
 .vitualization-table {
@@ -104,28 +117,34 @@ svg#clouds {
     position: sticky;
     top: 0;
     color: orange;
+    background-color: white;
 }
 
-.nav_elem {
-    display: flex;
-    align-items: ltr;
+.mat-row:nth-child(even) {
+    background-color: white;
 }
 
-.col3 {
-    width: 25%;
-}
-
-.col5 {
-    width: 50%;
-}
-
-.col6 {
-    width: 25%;
+.mat-row:nth-child(odd) {
+    background-color: rgb(240, 236, 236);
 }
 
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
+
+    #buttn {
+        width: 25%;
+        padding: 2px;
+    }
+
+    .csv-button button {
+        width: 25%;
+        font-size: smaller;
+    }
+
+    .csv-button {
+        width: 100%;
+    }
 
     .nav_elem {
         display: block;
@@ -135,30 +154,6 @@ svg#clouds {
 
     .col3 {
         width: 100%;
-    }
-
-
-    .col5,
-    .col5 button {
-        width: 100%;
-    }
-
-    .col6 {
-        width: 100%;
-    }
-
-    .card-container>*:not(.circle-link),
-    .terminal {
-        width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-        height: 16px;
-        margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-        margin-left: 72px;
     }
 
     svg#rocket-smoke {
@@ -178,6 +173,7 @@ table {
     width: 100%;
 }
 
+/* search by nationality input field */
 .mat-form-field {
     font-size: 14px;
     width: 100%;

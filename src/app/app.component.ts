@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(CdkVirtualScrollViewport) scroller!: CdkVirtualScrollViewport;
 
-  displayedColumns: string[] = ['name', 'gender', 'location', 'email', 'current_age', 'registration', 'phone', 'picture'];
+  displayedColumns: string[] = ['name', 'gender', 'nationality', 'email', 'current_age', 'seniority', 'phone', 'picture'];
 
   constructor(private ngZone: NgZone, private api: ApiService, public loader: LoaderService) { }
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
     //filterPredicate to filter gender using start characters
     this.dataSource.filterPredicate = function (data: UserInterface, filter: string): boolean {
-      return data.gender.toLowerCase().startsWith(filter);
+      return data.gender.toLowerCase().startsWith(filter) || data.location['state'].toLowerCase().includes(filter);
     };
 
   }
@@ -47,6 +47,7 @@ export class AppComponent implements OnInit {
     ).subscribe(() => {
       this.ngZone.run(() => {
         this.getData();
+        this.scroller.scrollToOffset(0);
       });
     });
   }
@@ -75,5 +76,13 @@ export class AppComponent implements OnInit {
   applyFilter(event: string) {
     const filterValue = event;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  applyFilterByNationality(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  displayAll() {
+    this.displayedColumns.splice(0);
+    this.displayedColumns.push('name', 'gender', 'nationality', 'email', 'current_age', 'seniority', 'phone', 'picture');
   }
 }

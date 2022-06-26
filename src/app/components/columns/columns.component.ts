@@ -14,7 +14,7 @@ export class ColumnsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  task: string[] = ['name', 'gender', 'location', 'email', 'current_age', 'registration', 'phone', 'picture'];
+  task: string[] = ['name', 'gender', 'nationality', 'email', 'current_age', 'seniority', 'phone', 'picture'];
 
   @Output() displayColumn = new EventEmitter<any>()
 

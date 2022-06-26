@@ -1,18 +1,18 @@
 export interface UserInterface {
     gender: string,
-    name: [
+    name: {
         title: string,
         first: string,
         last: string
-    ],
-    location: [
-        country: string
-    ],
+    },
+    location: {
+        state: string
+    },
     email: string,
     dob: Array<any>,
-    registered: [
+    registered: {
         age: number
-    ],
+    },
     phone: string,
     picture: Array<string>
 }
