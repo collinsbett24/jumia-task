@@ -90,7 +90,8 @@ The project can go through the following tests
 - @angular/pwa v13.3.3
 
 # Future Implementation
-//
+ Work on exporting data from datatable to xml file.
+ 
 # Copyright and License
 Copyright 2022 Collins Bett 
 Licensed under MIT (https://github.com/collinsbett24/jumia-task.git)

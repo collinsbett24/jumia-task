@@ -9,10 +9,14 @@ export interface UserInterface {
         state: string
     },
     email: string,
-    dob: Array<any>,
+    dob: {
+        age: number
+    },
     registered: {
         age: number
     },
     phone: string,
-    picture: Array<string>
+    picture: {
+        thumbnail: string
+    }
 }
