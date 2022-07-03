@@ -1,10 +1,10 @@
-import { Component, ViewChild, OnInit, NgZone } from '@angular/core';
+import { Component, ViewChild, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { ApiService } from './service/api.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { LoaderService } from './service/loader.service';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-import { filter, map, pairwise, throttleTime } from 'rxjs';
+import { filter, map, pairwise, Subscription, throttleTime } from 'rxjs';
 import { UserInterface } from './interfaces/userInterface';
 
 @Component({
@@ -12,7 +12,7 @@ import { UserInterface } from './interfaces/userInterface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'Users App List';
   Data: Array<UserInterface> = [];
   dataSource = new MatTableDataSource<UserInterface>(this.Data);
@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport) scroller!: CdkVirtualScrollViewport;
 
   displayedColumns: string[] = ['name', 'gender', 'nationality', 'email', 'current_age', 'seniority', 'phone', 'picture'];
+
+  private subscriptions: Subscription[] = [];
 
   constructor(private ngZone: NgZone, private api: ApiService, public loader: LoaderService) { }
   ngOnInit(): void {
@@ -55,10 +57,10 @@ export class AppComponent implements OnInit {
   //function to subscribe to the Api service class to get data
   getData() {
     let resp = this.api.getUserInformation();
-    resp.subscribe((response: any) => {
+    this.subscriptions.push(resp.subscribe((response: any) => {
       this.loader.isLoading.next(true)
       this.dataSource.data = response.results as UserInterface[];
-    });
+    }));
   }
 
   //function to Remove and Add Columns to display
@@ -84,5 +86,9 @@ export class AppComponent implements OnInit {
   displayAll() {
     this.displayedColumns.splice(0);
     this.displayedColumns.push('name', 'gender', 'nationality', 'email', 'current_age', 'seniority', 'phone', 'picture');
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(s => s.unsubscribe())
   }
 }
