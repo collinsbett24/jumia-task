@@ -1,4 +1,4 @@
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
     background-color: orange;
     border-radius: 5px;
 }
@@ -14,4 +14,4 @@
 ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
     transform: translateY(-1.1em) scale(.75);
     width: 133.33333%;
-}
+} */

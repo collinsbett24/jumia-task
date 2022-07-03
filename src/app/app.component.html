@@ -1,7 +1,7 @@
 <!-- toolbar with custom css color -->
 <mat-toolbar class="toolbar sticky-top">
   <div class="container">
-    <span class="span">Welcome | {{title}}</span>
+    <span class="span">Jumia</span>
   </div>
 </mat-toolbar>
 <!-- end of toolbar -->
@@ -24,8 +24,6 @@
   <!-- div with filter and columns and button -->
   <!-- <div class="nav_elem pt-3">
     <div class="csv-button">
-      
-
       <app-columns id="buttn" class="me-1" (displayColumn)="updateDisplay($event)"></app-columns>
 
       <button mat-button id="buttndisplay" class="btn btn-sm me-1" mat-button (click)="displayAll()">Display
@@ -47,29 +45,32 @@
   <cdk-virtual-scroll-viewport #scroller class="vitualization-table" itemSize="72">
 
     <div class="buttons-column">
-      <span class="table-title">Users</span>
+      <span class="table-title"> {{title}}</span>
       <span class="spacer"></span>
       <div class="csv-button">
         <button mat-button [matMenuTriggerFor]="menu" id="buttndisplay">
-          <mat-icon>list</mat-icon>
+          <mat-icon>share</mat-icon>
+          <span>Export</span>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="exporter.exportTable('csv')">Export To CSV</button>
+          <button mat-menu-item (click)="exporter.exportTable('csv')">CSV</button>
         </mat-menu>
         <button mat-button [matMenuTriggerFor]="menu1" id="buttndisplay">
-          <mat-icon>add_circle</mat-icon>
+          <mat-icon>list</mat-icon>
+          <span>Columns</span>
         </button>
         <mat-menu #menu1="matMenu">
-          <app-columns id="buttn" class="me-1" (displayColumn)="updateDisplay($event)"></app-columns>
+          <app-columns (displayColumn)="updateDisplay($event)"></app-columns>
 
           <button mat-menu-item (click)="displayAll()">Display
             All</button>
         </mat-menu>
-        <button mat-button [matMenuTriggerFor]="menu2" id="buttndisplay">
+        <button mat-button (click)="openFilterDialog()" id="buttndisplay">
           <mat-icon>filter_list</mat-icon>
+          <span>Filter</span>
         </button>
-        <mat-menu class="csv-button" #menu2="matMenu">
-          <app-gender-options class="buttn" (filterGender)="applyFilter($event)">
+        <mat-menu #menu2="matMenu">
+          <app-gender-options (filterGender)="applyFilter($event)">
           </app-gender-options>
           <button mat-menu-item>Nationality</button>
         </mat-menu>
