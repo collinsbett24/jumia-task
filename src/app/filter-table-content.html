@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Filter Data</h1>
+
+<app-gender-options class="buttn">
+</app-gender-options>
+
+<!-- <button mat-button class="btn btn-sm" mat-button (click)="exporter.exportTable('csv')">Export To CSV</button> -->
+
+<button mat-button class="buttn">Export To CSV</button>
+
+<mat-form-field appearance="standard">
+    <mat-label>Filter By Nationality</mat-label>
+    <!-- <input matInput (keyup)="applyFilterByNationality($event)" placeholder="Ex. ium" #input> -->
+    <input matInput placeholder="Ex. ium" #input>
+
+</mat-form-field>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>

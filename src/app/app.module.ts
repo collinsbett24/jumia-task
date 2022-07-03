@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AppComponent } from './app.component';
+import { AppComponent, DialogOverviewExampleDialog, FilterTableContent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiService } from './service/api.service';
 
@@ -17,6 +17,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { FormsModule } from '@angular/forms';
@@ -26,12 +28,15 @@ import { NgxLoadingModule } from 'ngx-loading';
 import { GenderOptionsComponent } from './components/gender-options/gender-options.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     ColumnsComponent,
-    GenderOptionsComponent
+    GenderOptionsComponent,
+    DialogOverviewExampleDialog,
+    FilterTableContent
   ],
   imports: [
     BrowserModule,
@@ -43,12 +48,15 @@ import { environment } from '../environments/environment';
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule,
     MatTableExporterModule,
     MatInputModule,
     ScrollingModule,
     MatToolbarModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatButtonModule,
+    MatIconModule,
     NgbModule,
     NgxLoadingModule.forRoot({}),
     ServiceWorkerModule.register('ngsw-worker.js', {

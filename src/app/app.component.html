@@ -7,7 +7,7 @@
 <!-- end of toolbar -->
 
 <!-- Main Container including with bootstrap style-->
-<div class="container pb-5">
+<div class="container mt-3 pb-5">
 
   <!-- loading template from Ngx-loading -->
   <div *ngIf="loader.isLoading |async">
@@ -21,31 +21,24 @@
   </div>
   <!-- end of loading template -->
 
-  <!-- div with filter and columns and button -->
-  <div class="nav_elem pt-3">
-    <div class="csv-button">
-      <app-gender-options id="buttn" (filterGender)="applyFilter($event)">
-      </app-gender-options>
-
-      <app-columns id="buttn" class="me-1" (displayColumn)="updateDisplay($event)"></app-columns>
-
-      <button mat-button id="buttndisplay" class="btn btn-sm me-1" mat-button (click)="displayAll()">Display
-        All</button>
-
-      <button mat-button class="btn btn-sm" mat-button (click)="exporter.exportTable('csv')">Export To CSV</button>
-    </div>
-    <div class="col3 me-2">
-      <mat-form-field appearance="standard">
-        <mat-label>Filter By Nationality</mat-label>
-        <input matInput (keyup)="applyFilterByNationality($event)" placeholder="Ex. ium" #input>
-      </mat-form-field>
-    </div>
-
-  </div>
-  <!-- end of div with filter and columns -->
-
   <!-- material table with virtual scrolling -->
   <cdk-virtual-scroll-viewport #scroller class="vitualization-table" itemSize="72">
+
+    <div class="buttons-column">
+      <span class="table-title">Users</span>
+      <span class="spacer"></span>
+      <div class="csv-button">
+        <button mat-button id="buttndisplay" (click)="openFilterDialog()">
+          <mat-icon>list</mat-icon>
+        </button>
+        <button mat-button id="buttndisplay" (click)="openDialog()">
+          <mat-icon>add_circle</mat-icon>
+        </button>
+        <button mat-button id="buttndisplay" (click)="openFilterDialog()">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </div>
+    </div>
     <table class="mat-elevation-z8 table-striped " mat-table matTableExporter [dataSource]="dataSource"
       #exporter="matTableExporter" matSort matSortStart="desc">
 
@@ -117,7 +110,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       <tr *matNoDataRow>
         <td colspan="5" style="color: brown;">
-          <h2>No User data in the list matches the Nationality of {{input.value | titlecase}}</h2>
+          <h2>No User data in the list matches the Nationality of </h2>
         </td>
       </tr>
     </table>

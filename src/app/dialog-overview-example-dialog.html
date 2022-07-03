@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Columns</h1>
+<app-columns (displayColumn)="updateDisplay($event)"></app-columns>
+
+<button mat-button class="buttn" mat-button (click)="displayAll()">Display
+    All</button>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>

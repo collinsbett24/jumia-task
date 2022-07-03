@@ -13,19 +13,23 @@ tr:hover {
 }
 
 .csv-button {
-    width: 75%;
+    /* width: 75%; */
     display: flex;
-    justify-content: start;
+    justify-content: end;
 }
 
-#buttn {
-    width: 10rem;
-    padding: 2px;
+.spacer {
+    flex: 1 1 auto;
+}
+
+.buttons-column {
+    display: flex;
 }
 
 .csv-button button {
-    margin-top: 0.4rem;
-    width: 10rem;
+    /* padding-top: 0.3rem; */
+    margin: 0.4rem;
+    width: 3rem;
     font-size: small;
     height: 2.2rem;
     background-color: orange;
@@ -34,13 +38,15 @@ tr:hover {
     overflow: hidden;
 }
 
+.table-title {
+    font-size: large;
+    font-weight: bolder;
+    padding: 0.5rem;
+}
+
 .nav_elem {
     display: flex;
     align-items: ltr;
-}
-
-.col3 {
-    width: 25%;
 }
 
 .user_picture {
@@ -58,6 +64,7 @@ tr:hover {
 
 .table {
     width: 100%;
+    margin-top: 1rem;
 }
 
 .example-loading-shade {
@@ -75,6 +82,12 @@ tr:hover {
     border-radius: 5px;
 }
 
+.buttn {
+    width: 100%;
+    background-color: orange;
+    font-weight: normal;
+    text-align: start;
+}
 
 .content {
     height: calc(100vh - 64px);
@@ -134,13 +147,8 @@ svg#clouds {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
 
-    #buttn {
-        width: 25%;
-        padding: 2px;
-    }
-
     .csv-button button {
-        width: 25%;
+        width: 3rem;
         font-size: smaller;
     }
 
@@ -154,9 +162,10 @@ svg#clouds {
         justify-content: center;
     }
 
-    .col3 {
+    .buttn {
         width: 100%;
     }
+
 
     svg#rocket-smoke {
         right: 120px;
