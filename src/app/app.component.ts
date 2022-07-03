@@ -68,7 +68,15 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   //function to Remove and Add Columns to display
-
+  updateDisplay(column_name: string) {
+    console.log(column_name)
+    let index = this.displayedColumns.findIndex(d => d == column_name);
+    console.log(index)
+    if (index >= 0)
+      this.displayedColumns.splice(index, 1);
+    else
+      this.displayedColumns.push(column_name);
+  }
 
   //function to filture data on Material data table on KeyUp
   applyFilter(event: string) {
