@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenderOptionsComponent } from './gender-options.component';
+import { TableComponentComponent } from './table-component.component';
 
-describe('GenderOptionsComponent', () => {
-  let component: GenderOptionsComponent;
-  let fixture: ComponentFixture<GenderOptionsComponent>;
+describe('TableComponentComponent', () => {
+  let component: TableComponentComponent;
+  let fixture: ComponentFixture<TableComponentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GenderOptionsComponent ]
+      declarations: [ TableComponentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GenderOptionsComponent);
+    fixture = TestBed.createComponent(TableComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
